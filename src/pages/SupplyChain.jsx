@@ -152,7 +152,7 @@ export default function SupplyChain() {
                     {filteredSuppliers.map(s => (
                       <li 
                         key={s.id} 
-                        className="flex justify-between items-center px-4 py-3 text-sm hover:bg-emerald-50 cursor-pointer transition-colors border-b border-white/10 last:border-0"
+                        className="flex justify-between items-center px-4 py-3 text-sm hover:bg-white/10 cursor-pointer transition-colors border-b border-white/10 last:border-0"
                         onClick={() => {
                           setNewSupplierName(s.name);
                           setShowDropdown(false);
@@ -242,7 +242,7 @@ export default function SupplyChain() {
                 </TableHeader>
                 <TableBody>
                   {localSuppliers.map((supplier, idx) => (
-                    <TableRow key={supplier.id + idx} className="border-b border-white/5 hover:bg-emerald-50/50 transition-colors">
+                    <TableRow key={supplier.id + idx} className="border-b border-white/5 hover:bg-white/5 transition-colors">
                       <TableCell className="font-medium pl-6">
                         <div className="text-foreground font-semibold">{supplier.name}</div>
                         <div className="text-xs text-muted-foreground mt-0.5">{supplier.id}</div>
