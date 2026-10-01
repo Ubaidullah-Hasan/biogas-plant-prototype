@@ -101,12 +101,7 @@ export default function SupplyChain() {
   return (
     <div className="p-8 space-y-6 animate-in fade-in slide-in-from-bottom-4 duration-700">
       
-      <div className="flex justify-between items-center">
-        <div>
-          <h2 className="text-2xl font-bold tracking-tight text-foreground">Supply Chain & Inventory</h2>
-          <p className="text-muted-foreground">Manage waste collection logistics and farmer payments.</p>
-        </div>
-        
+      <div className="flex justify-end items-center">
         <Dialog open={isModalOpen} onOpenChange={setIsModalOpen}>
           <DialogTrigger asChild>
             <Button className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg shadow-primary/30 rounded-xl px-5">
@@ -224,13 +219,13 @@ export default function SupplyChain() {
         
         {/* Main Table Section */}
         <Card className="lg:col-span-2 bg-white/5 backdrop-blur-2xl shadow-2xl shadow-black/40 border-white/10 rounded-2xl overflow-hidden">
-          <CardHeader className="border-b border-white/5 bg-white/5">
+          <CardHeader className="border-b border-white/10">
             <CardTitle>Recent Waste Supply</CardTitle>
           </CardHeader>
           <CardContent className="p-0">
             <div className="overflow-x-auto">
               <Table>
-                <TableHeader className="bg-muted/30">
+                <TableHeader className="bg-transparent border-b border-white/10">
                   <TableRow className="border-none hover:bg-transparent">
                     <TableHead className="pl-6">Supplier</TableHead>
                     <TableHead>Waste Type</TableHead>
