@@ -26,19 +26,19 @@ export default function Header() {
   };
 
   return (
-    <header className="sticky top-0 z-10 h-16 flex items-center justify-between px-8 bg-white/70 backdrop-blur-md border-b border-border/50">
+    <header className="sticky top-0 z-10 h-16 flex items-center justify-between px-8 bg-white/5 backdrop-blur-2xl border-b border-white/10">
       <h1 className="text-xl font-bold text-foreground">
         {getPageTitle()}
       </h1>
 
       <div className="flex items-center gap-6">
         {/* Search Bar */}
-        <div className="relative hidden md:flex items-center">
-          <Search className="absolute left-3 w-4 h-4 text-muted-foreground" />
+        <div className="relative hidden md:flex items-center group">
+          <Search className="absolute left-3 w-4 h-4 text-muted-foreground group-focus-within:text-emerald-500 transition-colors" />
           <input 
             type="text" 
-            placeholder="Search..." 
-            className="h-9 w-64 rounded-full border border-border bg-muted/50 pl-9 pr-4 text-sm focus:outline-none focus:ring-1 focus:ring-primary transition-all"
+            placeholder="Search anything..." 
+            className="h-10 w-64 md:focus:w-80 rounded-full border border-border bg-muted/30 pl-10 pr-4 text-sm focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-all duration-300 placeholder:text-muted-foreground/60 shadow-2xl shadow-black/40"
           />
         </div>
 
@@ -55,11 +55,11 @@ export default function Header() {
               )}
             </button>
           </PopoverTrigger>
-          <PopoverContent align="end" className="w-80 p-0 shadow-lg border-border/50 backdrop-blur-xl bg-white/90">
+          <PopoverContent align="end" className="w-80 p-0 shadow-lg border-white/10 backdrop-blur-xl bg-slate-900/80">
             <div className="p-3 border-b font-semibold text-sm">Recent Alerts</div>
             <div className="max-h-[300px] overflow-y-auto">
               {alerts.map(alert => (
-                <div key={alert.id} className="flex gap-3 p-3 border-b border-border/40 hover:bg-muted/50 transition-colors cursor-pointer last:border-0">
+                <div key={alert.id} className="flex gap-3 p-3 border-b border-white/10 hover:bg-muted/50 transition-colors cursor-pointer last:border-0">
                   <div className="mt-0.5">{getAlertIcon(alert.type)}</div>
                   <div className="flex-1">
                     <p className="text-sm font-medium leading-tight">{alert.message}</p>

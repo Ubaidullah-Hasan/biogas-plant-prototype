@@ -3,7 +3,7 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/com
 
 export default function ProductionChart({ data }) {
   return (
-    <Card className="col-span-2 bg-white/70 backdrop-blur-md shadow-sm border-border/50">
+    <Card className="col-span-2 bg-white/5 backdrop-blur-2xl shadow-2xl shadow-black/40 border-white/10">
       <CardHeader>
         <CardTitle>Production Analytics</CardTitle>
         <CardDescription>Waste Input vs Gas Output (Last 7 Days)</CardDescription>

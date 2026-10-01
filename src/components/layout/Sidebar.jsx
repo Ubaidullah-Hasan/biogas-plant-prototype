@@ -11,9 +11,9 @@ const navItems = [
 
 export default function Sidebar() {
   return (
-    <aside className="fixed top-0 left-0 h-screen w-64 flex flex-col border-r bg-white/70 backdrop-blur-md shadow-sm z-20">
+    <aside className="fixed top-0 left-0 h-screen w-64 flex flex-col border-r bg-white/5 backdrop-blur-2xl shadow-2xl shadow-black/40 z-20">
       {/* Brand */}
-      <div className="flex items-center gap-2 px-6 h-16 border-b border-border/50">
+      <div className="flex items-center gap-2 px-6 h-16 border-b border-white/10">
         <div className="bg-primary/10 p-2 rounded-lg">
           <Leaf className="w-6 h-6 text-primary" />
         </div>
@@ -28,21 +28,25 @@ export default function Sidebar() {
             to={item.href}
             className={({ isActive }) =>
               cn(
-                "flex items-center gap-3 px-3 py-2.5 rounded-md text-sm font-medium transition-colors",
+                "flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-semibold transition-all duration-300",
                 isActive
-                  ? "bg-primary text-primary-foreground shadow-md shadow-primary/20"
-                  : "text-muted-foreground hover:bg-muted hover:text-foreground"
+                  ? "bg-emerald-50 text-emerald-600 shadow-2xl shadow-black/40 border border-emerald-100"
+                  : "text-muted-foreground hover:bg-muted/50 hover:text-foreground hover:translate-x-1"
               )
             }
           >
-            <item.icon className="w-5 h-5" />
-            {item.name}
+            {({ isActive }) => (
+              <>
+                <item.icon className={cn("w-5 h-5", isActive ? "text-emerald-500" : "")} />
+                {item.name}
+              </>
+            )}
           </NavLink>
         ))}
       </nav>
 
       {/* Bottom Profile */}
-      <div className="p-4 border-t border-border/50">
+      <div className="p-4 border-t border-white/10">
         <div className="flex items-center gap-3 px-3 py-2 rounded-md hover:bg-muted transition-colors cursor-pointer">
           <UserCircle className="w-8 h-8 text-muted-foreground" />
           <div className="flex-1 overflow-hidden">

@@ -19,7 +19,7 @@ export default function ActivityLog({ alerts }) {
   };
 
   return (
-    <Card className="bg-white/70 backdrop-blur-md shadow-sm border-border/50">
+    <Card className="bg-white/5 backdrop-blur-2xl shadow-2xl shadow-black/40 border-white/10">
       <CardHeader>
         <CardTitle>System Activity Log</CardTitle>
       </CardHeader>

@@ -41,6 +41,7 @@ export default function Dashboard() {
           unit={kpiMetrics.totalGasProduced.unit} 
           trend={kpiMetrics.totalGasProduced.trend} 
           isPositive={true}
+          delay="delay-0"
         />
         <StatCard 
           label={kpiMetrics.activeSuppliers.label} 
@@ -48,6 +49,7 @@ export default function Dashboard() {
           unit={kpiMetrics.activeSuppliers.unit} 
           trend={kpiMetrics.activeSuppliers.trend} 
           isPositive={true}
+          delay="delay-100"
         />
         <StatCard 
           label={kpiMetrics.revenueGenerated.label} 
@@ -55,6 +57,7 @@ export default function Dashboard() {
           unit={kpiMetrics.revenueGenerated.unit} 
           trend={kpiMetrics.revenueGenerated.trend} 
           isPositive={true}
+          delay="delay-200"
         />
         <StatCard 
           label={kpiMetrics.co2Saved.label} 
@@ -62,6 +65,7 @@ export default function Dashboard() {
           unit={kpiMetrics.co2Saved.unit} 
           trend={kpiMetrics.co2Saved.trend} 
           isPositive={true}
+          delay="delay-300"
         />
       </div>
 

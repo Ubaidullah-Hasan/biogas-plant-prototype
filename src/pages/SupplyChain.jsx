@@ -114,10 +114,10 @@ export default function SupplyChain() {
               Add New Input
             </Button>
           </DialogTrigger>
-          <DialogContent className="sm:max-w-[420px] bg-white/95 backdrop-blur-2xl border-white/20 shadow-2xl p-0 overflow-visible rounded-2xl">
+          <DialogContent className="sm:max-w-[420px] bg-slate-950/80 backdrop-blur-2xl border-slate-700/50 shadow-2xl p-0 overflow-visible rounded-2xl">
             
             {/* Modal Header */}
-            <div className="px-6 py-5 border-b border-border/40 bg-muted/10 rounded-t-2xl">
+            <div className="px-6 py-5 border-b border-white/10 bg-muted/10 rounded-t-2xl">
               <DialogTitle className="text-xl font-bold flex items-center gap-3">
                 <div className="p-2.5 bg-emerald-500/10 rounded-xl text-emerald-600">
                   <Sprout className="w-5 h-5" />
@@ -142,17 +142,17 @@ export default function SupplyChain() {
                     onChange={(e) => { setNewSupplierName(e.target.value); setShowDropdown(true); }}
                     onFocus={() => setShowDropdown(true)}
                     onBlur={() => setTimeout(() => setShowDropdown(false), 200)}
-                    className="flex h-11 w-full rounded-xl border border-border/50 bg-white pl-10 pr-4 text-sm shadow-sm transition-all focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 outline-none placeholder:text-muted-foreground/50"
+                    className="flex h-11 w-full rounded-xl border border-white/10 bg-slate-900 pl-10 pr-4 text-sm shadow-2xl shadow-black/40 transition-all focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 outline-none placeholder:text-muted-foreground/50"
                     placeholder="e.g. Rahim Uddin" 
                   />
                 </div>
                 {/* Autocomplete Dropdown */}
                 {showDropdown && filteredSuppliers.length > 0 && (
-                  <ul className="absolute z-50 w-full mt-1.5 bg-white/95 backdrop-blur-xl border border-border/50 rounded-xl shadow-xl max-h-48 overflow-y-auto overflow-hidden animate-in fade-in zoom-in-95 duration-200">
+                  <ul className="absolute z-50 w-full mt-1.5 bg-slate-950/80 backdrop-blur-xl border border-white/10 rounded-xl shadow-xl max-h-48 overflow-y-auto overflow-hidden animate-in fade-in zoom-in-95 duration-200">
                     {filteredSuppliers.map(s => (
                       <li 
                         key={s.id} 
-                        className="flex justify-between items-center px-4 py-3 text-sm hover:bg-emerald-50 cursor-pointer transition-colors border-b border-border/40 last:border-0"
+                        className="flex justify-between items-center px-4 py-3 text-sm hover:bg-emerald-50 cursor-pointer transition-colors border-b border-white/10 last:border-0"
                         onClick={() => {
                           setNewSupplierName(s.name);
                           setShowDropdown(false);
@@ -174,7 +174,7 @@ export default function SupplyChain() {
                   <select 
                     value={newWasteType}
                     onChange={(e) => setNewWasteType(e.target.value)}
-                    className="flex h-11 w-full rounded-xl border border-border/50 bg-white pl-10 pr-10 text-sm shadow-sm transition-all focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 outline-none appearance-none"
+                    className="flex h-11 w-full rounded-xl border border-white/10 bg-slate-900 pl-10 pr-10 text-sm shadow-2xl shadow-black/40 transition-all focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 outline-none appearance-none"
                   >
                     <option value="Cow Dung">Cow Dung</option>
                     <option value="Poultry Waste">Poultry Waste</option>
@@ -191,7 +191,7 @@ export default function SupplyChain() {
                     type="number" 
                     value={newQuantity}
                     onChange={(e) => setNewQuantity(e.target.value)}
-                    className="flex h-11 w-full rounded-xl border border-border/50 bg-white pl-10 pr-12 text-sm shadow-sm transition-all focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 outline-none placeholder:text-muted-foreground/50" 
+                    className="flex h-11 w-full rounded-xl border border-white/10 bg-slate-900 pl-10 pr-12 text-sm shadow-2xl shadow-black/40 transition-all focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 outline-none placeholder:text-muted-foreground/50" 
                     placeholder="Enter amount" 
                   />
                   <div className="absolute right-4 top-1/2 -translate-y-1/2 text-xs font-bold text-muted-foreground uppercase tracking-wider">
@@ -203,9 +203,9 @@ export default function SupplyChain() {
             </div>
 
             {/* Modal Footer */}
-            <div className="px-6 py-4 border-t border-border/40 bg-muted/10 rounded-b-2xl flex justify-end gap-3">
+            <div className="px-6 py-4 border-t border-white/10 bg-muted/10 rounded-b-2xl flex justify-end gap-3">
               <DialogClose asChild>
-                <Button variant="outline" className="rounded-xl border-border/50 hover:bg-white text-muted-foreground hover:text-foreground">
+                <Button variant="outline" className="rounded-xl border-white/10 hover:bg-slate-900 text-muted-foreground hover:text-foreground">
                   Cancel
                 </Button>
               </DialogClose>
@@ -223,8 +223,8 @@ export default function SupplyChain() {
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         
         {/* Main Table Section */}
-        <Card className="lg:col-span-2 bg-white/70 backdrop-blur-md shadow-sm border-border/50 rounded-2xl overflow-hidden">
-          <CardHeader className="border-b border-border/30 bg-white/50">
+        <Card className="lg:col-span-2 bg-white/5 backdrop-blur-2xl shadow-2xl shadow-black/40 border-white/10 rounded-2xl overflow-hidden">
+          <CardHeader className="border-b border-white/5 bg-white/5">
             <CardTitle>Recent Waste Supply</CardTitle>
           </CardHeader>
           <CardContent className="p-0">
@@ -242,7 +242,7 @@ export default function SupplyChain() {
                 </TableHeader>
                 <TableBody>
                   {localSuppliers.map((supplier, idx) => (
-                    <TableRow key={supplier.id + idx} className="border-b border-border/30 hover:bg-emerald-50/50 transition-colors">
+                    <TableRow key={supplier.id + idx} className="border-b border-white/5 hover:bg-emerald-50/50 transition-colors">
                       <TableCell className="font-medium pl-6">
                         <div className="text-foreground font-semibold">{supplier.name}</div>
                         <div className="text-xs text-muted-foreground mt-0.5">{supplier.id}</div>
@@ -265,7 +265,7 @@ export default function SupplyChain() {
         </Card>
 
         {/* Leaderboard Section */}
-        <Card className="lg:col-span-1 bg-white/70 backdrop-blur-md shadow-sm border-border/50 rounded-2xl">
+        <Card className="lg:col-span-1 bg-white/5 backdrop-blur-2xl shadow-2xl shadow-black/40 border-white/10 rounded-2xl">
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
               <Trophy className="w-5 h-5 text-emerald-600" />
@@ -276,9 +276,9 @@ export default function SupplyChain() {
           <CardContent>
             <div className="space-y-3">
               {topContributors.map((contributor) => (
-                <div key={contributor.id} className="flex items-center justify-between p-3.5 rounded-xl border border-border/40 bg-white hover:shadow-sm transition-shadow">
+                <div key={contributor.id} className="flex items-center justify-between p-3.5 rounded-xl border border-white/10 bg-slate-900 hover:shadow-2xl shadow-black/40 transition-shadow">
                   <div className="flex items-center gap-3.5">
-                    <div className="flex items-center justify-center w-10 h-10 rounded-full bg-slate-50 border border-border/50 shadow-sm">
+                    <div className="flex items-center justify-center w-10 h-10 rounded-full bg-slate-900 border border-white/10 shadow-2xl shadow-black/40">
                       {getRankIcon(contributor.rank)}
                     </div>
                     <div>

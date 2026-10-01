@@ -57,7 +57,7 @@ function GaugeCircle({ value, max, label, unit, status }) {
 
 export default function SensorWidgets({ sensors }) {
   return (
-    <Card className="col-span-1 bg-white/70 backdrop-blur-md shadow-sm border-border/50">
+    <Card className="col-span-1 bg-white/5 backdrop-blur-2xl shadow-2xl shadow-black/40 border-white/10">
       <CardHeader>
         <CardTitle>Real-time IoT Sensors</CardTitle>
       </CardHeader>
